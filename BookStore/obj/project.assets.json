@@ -5006,11 +5006,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sasho\\Desktop\\Web Api\\BookStore\\BookStore\\BookStore\\BookStore.csproj",
+      "projectUniqueName": "C:\\Users\\Sasho\\Desktop\\MVC\\BookStoreApiDemo\\BookStore\\BookStore.csproj",
       "projectName": "BookStore",
-      "projectPath": "C:\\Users\\Sasho\\Desktop\\Web Api\\BookStore\\BookStore\\BookStore\\BookStore.csproj",
+      "projectPath": "C:\\Users\\Sasho\\Desktop\\MVC\\BookStoreApiDemo\\BookStore\\BookStore.csproj",
       "packagesPath": "C:\\Users\\Sasho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sasho\\Desktop\\Web Api\\BookStore\\BookStore\\BookStore\\obj\\",
+      "outputPath": "C:\\Users\\Sasho\\Desktop\\MVC\\BookStoreApiDemo\\BookStore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Sasho\\AppData\\Roaming\\NuGet\\NuGet.Config",
