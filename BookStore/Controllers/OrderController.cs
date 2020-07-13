@@ -27,5 +27,17 @@ namespace BookStore.Controllers
             var trackingNo = orderService.Create(model);
             return Ok(trackingNo);
         }
+
+        [HttpGet]
+        [Route("track")]
+        public IActionResult Get(string email, string trackingNumber)
+        {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(trackingNumber))
+            {
+                return BadRequest();
+            }
+
+            return Ok();
+        }
     }
 }

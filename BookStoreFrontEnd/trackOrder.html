@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./Styles/cart.css"/>
+    <link rel="stylesheet" href="./Styles/trackOrder.css" />
     <title>Book store</title>
 </head>
 <body>
@@ -12,54 +12,43 @@
         <dvi class="container">
             <a class="navbar-brand" href="./index.html">E-Books</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item"></li>
-                  <a class="nav-link" href="./index.html">Home</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Cart</a>
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="trackOrder.html">Track order</a>
+                    <a class="nav-link" href="./cart.html">Cart</a>
                 </li>
-              </ul>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Track order</a>
+                </li>
+                </ul>
             </div>
         </dvi>
-      </nav>
+    </nav>
 
-      <div class="container">
-        <div id="cartContainer">
+    <div class="container">
+        <br />
+        <h3>Enter your email and tracking number</h3>
+        <br />
+        <form class="form-group">
+            <input placeholder="Email adress" class='form-control' id="orderEmail"/>
+            <br />
+            <input placeholder="Tracking number" class='form-control' id="trackingNumber"/>
+            <br />
+            <div class="btn btn-primary" onclick="getOrder()">Get order</div>
+        </form>
+    </div>
 
-        </div>
-        <br>
-        <div>
-            <h4>Total price</h6>
-            <h4 id="totalPrice"></h4>
-        </div>
-      </div>
-
-      <div class="container">
-            <form id="form">
-                <input placeholder="Name" class="form-control" id="name"/>
-                <br/>
-                <input placeholder="Adress" class="form-control" id="adress"/>
-                <br/>
-                <input placeholder="Email" class="form-control" id="email"/>
-                <br/>
-                <input placeholder="Phone" class="form-control" id="phone"/>
-                <br/>
-                <div class="btn btn-primary text-light" onclick="createOrder()">Order</button>
-            </form>
-      </div>
+    
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
-    <script src="Scripts/localStorage.js"></script>
-    <script src="Scripts/cart.js"></script>
+    <script src="./Scripts/trackOrder.js"></script>
 </body>
 </html>
