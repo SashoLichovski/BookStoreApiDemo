@@ -1,0 +1,17 @@
+#bookContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.card{
+    margin-top: 20px;
+    width: 300px;
+}
+
+.card-text{
+    padding: 10px;
+    height: 100px;
+    overflow: auto;
+}

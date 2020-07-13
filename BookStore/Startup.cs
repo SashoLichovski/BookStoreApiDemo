@@ -37,8 +37,19 @@ namespace BookStore
                 options.UseSqlServer(Configuration.GetConnectionString("BookStoreDb"));
             });
 
+            services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
             services.AddTransient<IBookService, BookService>();
             services.AddTransient<IBookRepository, BookRepository>();
+
+            services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
+
 
             services.AddControllers();
         }
@@ -50,7 +61,7 @@ namespace BookStore
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
 
             app.UseRouting();

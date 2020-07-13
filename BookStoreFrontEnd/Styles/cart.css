@@ -1,0 +1,15 @@
+.itemBody{
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid black;
+    width: 300px;
+}
+
+#cartContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#form{
+    width: 400px;
+}
