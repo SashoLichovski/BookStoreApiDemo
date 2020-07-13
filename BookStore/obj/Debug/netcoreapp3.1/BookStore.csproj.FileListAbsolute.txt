@@ -97,8 +97,6 @@ C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\bin\Debug\netcoreapp3.1\ru
 C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\BookStore.csprojAssemblyReference.cache
 C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\BookStore.AssemblyInfoInputs.cache
 C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\BookStore.AssemblyInfo.cs
-C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\BookStore.csproj.CoreCompileInputs.cache
-C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\BookStore.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\BookStore.RazorTargetAssemblyInfo.cache
 C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\BookStore.csproj.CopyComplete
 C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\staticwebassets\BookStore.StaticWebAssets.Manifest.cache
@@ -106,3 +104,10 @@ C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\st
 C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\BookStore.dll
 C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\BookStore.pdb
 C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\BookStore.genruntimeconfig.cache
+C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\BookStore.csproj.CoreCompileInputs.cache
+C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\BookStore.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Sasho\Desktop\MVC\BookStoreApiDemo\BookStore\obj\Debug\netcoreapp3.1\BookStore.MvcApplicationPartsAssemblyInfo.cache

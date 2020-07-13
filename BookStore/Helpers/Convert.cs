@@ -37,5 +37,19 @@ namespace BookStore.Helpers
                 Quantity = x.Quantity
             };
         }
+
+        public static OrderDto ToOrderDto(this Order x)
+        {
+            return new OrderDto
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Phone = x.Phone,
+                Adress = x.Adress,
+                Email = x.Email,
+                FullPrice =  x.FullPrice,
+                TrackingNumber = x.TrackingNumber
+            };
+        }
     }
 }

@@ -50,7 +50,7 @@ namespace BookStore
             services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<IOrderRepository, OrderRepository>();
 
-
+            services.AddSwaggerGen();
             services.AddControllers();
         }
 
@@ -61,6 +61,13 @@ namespace BookStore
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "BookStore docs");
+            });
+
             app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
 

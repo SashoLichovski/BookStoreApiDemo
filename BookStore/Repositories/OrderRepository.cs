@@ -21,5 +21,15 @@ namespace BookStore.Repositories
             context.Orders.Add(order);
             context.SaveChanges();
         }
+
+        public Order FindOrder(string email, string trackingNumber)
+        {
+            return context.Orders.FirstOrDefault(x => x.Email == email && x.TrackingNumber == trackingNumber);
+        }
+
+        public List<BookOrders> GetOrderBooks(int orderId)
+        {
+            return context.BookOrders.Where(x => x.OrderId == orderId).ToList();
+        }
     }
 }

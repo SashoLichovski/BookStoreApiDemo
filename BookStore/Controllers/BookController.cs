@@ -1,6 +1,7 @@
 ﻿using BookStore.DtoModels;
 using BookStore.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace BookStore.Controllers
 {
@@ -16,7 +17,7 @@ namespace BookStore.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public ActionResult<List<BookDto>> Get()
         {
             var bookList = bookService.GetAll();
             return Ok(bookList);
@@ -24,7 +25,7 @@ namespace BookStore.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public IActionResult Get(int id)
+        public ActionResult<BookDto> Get(int id)
         {
             var book = bookService.GetById(id);
             return Ok(book);
@@ -32,7 +33,7 @@ namespace BookStore.Controllers
 
         [HttpGet]
         [Route("title")]
-        public IActionResult Get(string title)
+        public ActionResult<BookDto> Get(string title)
         {
             var book = bookService.GetByTitle(title);
             return Ok(book);

@@ -21,6 +21,16 @@ namespace BookStore.Services
             this.bookService = bookService;
         }
 
+        public bool CheckOrder(string email, string trackingNumber)
+        {
+            var order = orderRepo.FindOrder(email, trackingNumber);
+            if (order != null)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public string Create(CreateOrderDto model)
         {
             var order = new Order()
@@ -40,6 +50,22 @@ namespace BookStore.Services
             orderRepo.Add(order);
 
             return order.TrackingNumber;
+        }
+
+        public OrderDto GetOrder(string email, string trackingNumber)
+        {
+            var order = orderRepo.FindOrder(email, trackingNumber);
+            return order.ToOrderDto();
+        }
+        /// <summary>
+        /// Returns list of book titles for given order
+        /// </summary>
+        /// <param name="orderId"></param>
+        /// <returns>List of book titles</returns>
+        public List<string> GetOrderBooks(int orderId)
+        {
+            var orderBooks = orderRepo.GetOrderBooks(orderId);
+            return orderBooks.Select(x => bookService.GetById(x.BookId).Title).ToList();
         }
     }
 }

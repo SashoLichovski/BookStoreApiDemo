@@ -22,7 +22,7 @@ namespace BookStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(CreateOrderDto model)
+        public ActionResult<CreateOrderDto> Create(CreateOrderDto model)
         {
             var trackingNo = orderService.Create(model);
             return Ok(trackingNo);
@@ -36,8 +36,13 @@ namespace BookStore.Controllers
             {
                 return BadRequest();
             }
-
-            return Ok();
+            else if (!orderService.CheckOrder(email, trackingNumber))
+            {
+                return NotFound();
+            }
+            var order = orderService.GetOrder(email, trackingNumber);
+            order.BookTitles = orderService.GetOrderBooks(order.Id);
+            return Ok(order);
         }
     }
 }

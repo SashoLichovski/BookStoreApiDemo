@@ -56,28 +56,36 @@ function displayCartItems(){
 displayCartItems();
 
 function createOrder(){
-    var name = document.getElementById("name").value;
-    var adress = document.getElementById("adress").value;
-    var email = document.getElementById("email").value;
-    var phone = document.getElementById("phone").value;
-
-    var bookIds = storageService.getItems("cartItems");
-
-    axios.post('https://localhost:44345/api/Order', {
-        name: name,
-        adress: adress,
-        email: email,
-        phone: phone,
-        bookIds: bookIds
-      })
-      .then(function (response) {
-        //   debugger;
-        storageService.clearItems('cartItems');
-        alert(`Thank you for ordering. Your tracking number is ${response.data}`);
-        location.href = "./index.html";
-      })
-      .catch(function (error) {
-        //   debugger;
-        alert("All fields are required !");
-      });
+    if(storageService.getItems("cartItems").length == 0)
+    {
+        alert("You can't make an order with empty cart")
+    }
+    else
+    {
+        var name = document.getElementById("name").value;
+        var adress = document.getElementById("adress").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+    
+        var bookIds = storageService.getItems("cartItems");
+    
+        axios.post('https://localhost:44345/api/Order', {
+            name: name,
+            adress: adress,
+            email: email,
+            phone: phone,
+            bookIds: bookIds
+          })
+          .then(function (response) {
+            //   debugger;
+            storageService.clearItems('cartItems');
+            alert(`Thank you for ordering. Your tracking number is ${response.data}`);
+            location.href = "./index.html";
+          })
+          .catch(function (error) {
+            //   debugger;
+            alert("All fields are required !");
+          });
+    }
+    
 }

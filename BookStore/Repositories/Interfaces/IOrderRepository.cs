@@ -9,5 +9,7 @@ namespace BookStore.Repositories.Interfaces
     public interface IOrderRepository
     {
         void Add(Order order);
+        Order FindOrder(string email, string trackingNumber);
+        List<BookOrders> GetOrderBooks(int orderId);
     }
 }
