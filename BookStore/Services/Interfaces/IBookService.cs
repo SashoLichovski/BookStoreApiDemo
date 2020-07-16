@@ -12,7 +12,7 @@ namespace BookStore.Services.Interfaces
         /// Gets all books from Db
         /// </summary>
         /// <returns>List<BookDto></returns>
-        List<BookDto> GetAll();
+        List<BookDto> GetAll(bool isDeleted);
 
         /// <summary>
         /// Gets a specific book for the given Id

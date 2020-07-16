@@ -22,9 +22,9 @@ namespace BookStore.Repositories
             context.SaveChanges();
         }
 
-        public List<Book> GetAll()
+        public List<Book> GetAll(bool isDeleted)
         {
-            return context.Books.Where(x => !x.IsDeleted).ToList();
+            return context.Books.Where(x => x.IsDeleted == isDeleted).ToList();
         }
 
         public Book GetById(int id)

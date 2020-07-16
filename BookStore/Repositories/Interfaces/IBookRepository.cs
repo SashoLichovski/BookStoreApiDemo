@@ -8,7 +8,7 @@ namespace BookStore.Repositories.Interfaces
 {
     public interface IBookRepository
     {
-        List<Book> GetAll();
+        List<Book> GetAll(bool isDeleted);
         Book GetById(int id);
         Book GetByTitle(string title);
         void Add(Book dbBook);

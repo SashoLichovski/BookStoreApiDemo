@@ -55,8 +55,11 @@ function generateBook(book){
 
     var cardBtn = document.createElement(`button`);
     cardBtn.className = "btn btn-primary";
-
-    if (storageService.existsInLocalStorage(book.id, 'cartItems')) {
+    
+    if (book.quantity == 0) {
+        cardBtn.innerText = "Out of stock";
+        cardBtn.disabled = true;
+    }else if (storageService.existsInLocalStorage(book.id, 'cartItems')) {
         cardBtn.innerText = "Remove from cart";
         cardBtn.onclick = function(e){
             removeFromCart(event, book.id);

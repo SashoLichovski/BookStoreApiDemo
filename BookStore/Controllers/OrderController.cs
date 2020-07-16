@@ -28,8 +28,20 @@ namespace BookStore.Controllers
         [HttpPost]
         public IActionResult Create(CreateOrderDto model)
         {
-            var trackingNo = orderService.Create(model);
-            return Ok(trackingNo);
+            if (ModelState.IsValid)
+            {
+                if (orderService.CheckBookQuantity(model.BookIds))
+                {
+                    var trackingNo = orderService.Create(model);
+                    return Ok(trackingNo);
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            return BadRequest();
+
         }
 
         /// <summary>

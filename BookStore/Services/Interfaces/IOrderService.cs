@@ -21,6 +21,7 @@ namespace BookStore.Services.Interfaces
         /// <param name="trackingNumber"></param>
         /// <returns>Bool</returns>
         bool CheckOrder(string email, string trackingNumber);
+        bool CheckBookQuantity(List<int> bookIds);
 
         /// <summary>
         /// Gets specific order for the given email and tracking number

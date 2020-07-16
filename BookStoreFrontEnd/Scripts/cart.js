@@ -84,7 +84,12 @@ function createOrder(){
           })
           .catch(function (error) {
             //   debugger;
-            alert("All fields are required !");
+            if (error.response.status == 400) {
+                alert("All fields are required");
+            }else if(error.response.status == 404){
+                alert("One of the books in your cart went out of stock");
+                location.href = "./index.html";
+            }
           });
     }
     

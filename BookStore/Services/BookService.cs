@@ -25,9 +25,9 @@ namespace BookStore.Services
             bookRepo.Add(dbBook);
         }
 
-        public List<BookDto> GetAll()
+        public List<BookDto> GetAll(bool isDeleted)
         {
-            var dbBooks = bookRepo.GetAll();
+            var dbBooks = bookRepo.GetAll(isDeleted);
             var dtoModels = dbBooks.Select(x => x.ToBookDto()).ToList();
             return dtoModels;
         }

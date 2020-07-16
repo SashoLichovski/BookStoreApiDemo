@@ -23,7 +23,15 @@ namespace BookStore.Controllers
         [HttpGet]
         public ActionResult<List<BookDto>> Get()
         {
-            var bookList = bookService.GetAll();
+            var bookList = bookService.GetAll(false);
+            return Ok(bookList);
+        }
+
+        [HttpGet]
+        [Route("deleted")]
+        public ActionResult<List<BookDto>> GetDeleted()
+        {
+            var bookList = bookService.GetAll(true);
             return Ok(bookList);
         }
 

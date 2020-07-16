@@ -81,5 +81,19 @@ namespace BookStore.Services
             var orderBooks = orderRepo.GetOrderBooks(orderId);
             return orderBooks.Select(x => bookService.GetById(x.BookId).Title).ToList();
         }
+
+        public bool CheckBookQuantity(List<int> bookIds)
+        {
+            var isInStock = true;
+            foreach (var id in bookIds)
+            {
+                if (bookRepo.GetById(id).Quantity <= 0)
+                {
+                    isInStock = false;
+                    break;
+                }
+            }
+            return isInStock;
+        }
     }
 }
