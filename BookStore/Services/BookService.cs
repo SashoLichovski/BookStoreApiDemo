@@ -65,6 +65,7 @@ namespace BookStore.Services
                 dbBook.Price = dtoBook.Price;
                 dbBook.Genre = dtoBook.Genre;
                 dbBook.Quantity = dtoBook.Quantity;
+                dbBook.IsDeleted = dtoBook.IsDeleted;
                 bookRepo.Update(dbBook);
             }
         }

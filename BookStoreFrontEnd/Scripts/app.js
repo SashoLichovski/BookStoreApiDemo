@@ -46,6 +46,13 @@ function generateBook(book){
     cardGenre.innerText = `Genre: ${book.genre}`;
     cardBody.appendChild(cardGenre);
 
+    var inStock = document.createElement(`p`);
+    inStock.className = "card-subtitle mb-2 text-muted";
+    book.quantity != 0 ? 
+    inStock.innerText = `In stock: ${book.quantity}` :
+    inStock.innerText = `out of stock`;
+    cardBody.appendChild(inStock);
+
     var cardBtn = document.createElement(`button`);
     cardBtn.className = "btn btn-primary";
 

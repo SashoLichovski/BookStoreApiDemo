@@ -14,11 +14,13 @@ namespace BookStore.Services
     {
         private readonly IOrderRepository orderRepo;
         private readonly IBookService bookService;
+        private readonly IBookRepository bookRepo;
 
-        public OrderService(IOrderRepository orderRepo, IBookService bookService)
+        public OrderService(IOrderRepository orderRepo, IBookService bookService, IBookRepository bookRepo)
         {
             this.orderRepo = orderRepo;
             this.bookService = bookService;
+            this.bookRepo = bookRepo;
         }
 
         public bool CheckOrder(string email, string trackingNumber)
@@ -47,9 +49,21 @@ namespace BookStore.Services
                 FullPrice = model.BookIds.Sum(x => bookService.GetById(x).Price)
             };
 
+            ReduceQuantity(model.BookIds);
+
             orderRepo.Add(order);
 
             return order.TrackingNumber;
+        }
+
+        private void ReduceQuantity(List<int> bookIds)
+        {
+            var books = bookIds.Select(x => bookRepo.GetById(x)).ToList();
+            foreach (var book in books)
+            {
+                book.Quantity--;
+                bookRepo.Update(book);
+            }
         }
 
         public OrderDto GetOrder(string email, string trackingNumber)

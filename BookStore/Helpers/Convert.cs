@@ -20,7 +20,8 @@ namespace BookStore.Helpers
                 Author = x.Author,
                 Genre = x.Genre,
                 Price = x.Price,
-                Quantity = x.Quantity
+                Quantity = x.Quantity,
+                IsDeleted = x.IsDeleted
             };
         }
 
@@ -34,7 +35,8 @@ namespace BookStore.Helpers
                 Author = x.Author,
                 Genre = x.Genre,
                 Price = x.Price,
-                Quantity = x.Quantity
+                Quantity = x.Quantity,
+                IsDeleted = x.IsDeleted
             };
         }
 

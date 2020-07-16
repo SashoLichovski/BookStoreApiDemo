@@ -21,5 +21,6 @@ namespace BookStore.DtoModels
         public double Price { get; set; }
         [Required]
         public string Genre { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

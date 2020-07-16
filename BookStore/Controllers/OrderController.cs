@@ -21,16 +21,28 @@ namespace BookStore.Controllers
             this.orderService = orderService;
         }
 
+        /// <summary>
+        /// Creates new instace of Order and OrderBooks realtion for the order and the books in same order
+        /// </summary>
+        /// <param name="model"></param>
         [HttpPost]
-        public ActionResult<CreateOrderDto> Create(CreateOrderDto model)
+        public IActionResult Create(CreateOrderDto model)
         {
             var trackingNo = orderService.Create(model);
             return Ok(trackingNo);
         }
 
+        /// <summary>
+        /// Returns a specific order for the given email and tracking number,
+        /// BadRequest if one of the params is null or empty,
+        /// NotFound if the order is not found for the given params
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="trackingNumber"></param>
+        /// <returns>OrderDto</returns>
         [HttpGet]
         [Route("track")]
-        public IActionResult Get(string email, string trackingNumber)
+        public ActionResult<OrderDto> Get(string email, string trackingNumber)
         {
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(trackingNumber))
             {

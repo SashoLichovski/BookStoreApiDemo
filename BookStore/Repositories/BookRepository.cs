@@ -24,7 +24,7 @@ namespace BookStore.Repositories
 
         public List<Book> GetAll()
         {
-            return context.Books.ToList();
+            return context.Books.Where(x => !x.IsDeleted).ToList();
         }
 
         public Book GetById(int id)

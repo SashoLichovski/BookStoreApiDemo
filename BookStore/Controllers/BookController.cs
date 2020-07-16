@@ -16,6 +16,10 @@ namespace BookStore.Controllers
             this.bookService = bookService;
         }
 
+        /// <summary>
+        /// Returns all books from Db
+        /// </summary>
+        /// <returns>List<BookDto></returns>
         [HttpGet]
         public ActionResult<List<BookDto>> Get()
         {
@@ -23,6 +27,11 @@ namespace BookStore.Controllers
             return Ok(bookList);
         }
 
+        /// <summary>
+        /// Returns a specific book for the given Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>BookDto</returns>
         [HttpGet]
         [Route("{id}")]
         public ActionResult<BookDto> Get(int id)
@@ -31,6 +40,11 @@ namespace BookStore.Controllers
             return Ok(book);
         }
 
+        /// <summary>
+        /// Returns a specific book by the given title
+        /// </summary>
+        /// <param name="title"></param>
+        /// <returns>BookDto</returns>
         [HttpGet]
         [Route("title")]
         public ActionResult<BookDto> Get(string title)
@@ -39,6 +53,10 @@ namespace BookStore.Controllers
             return Ok(book);
         }
 
+        /// <summary>
+        /// Creates new instance of a book
+        /// </summary>
+        /// <param name="dtoBook"></param>
         [HttpPost]
         public IActionResult Create(BookDto dtoBook)
         {
@@ -46,6 +64,10 @@ namespace BookStore.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Updates an existing book
+        /// </summary>
+        /// <param name="dtoBook"></param>
         [HttpPut]
         public IActionResult Update(BookDto dtoBook)
         {

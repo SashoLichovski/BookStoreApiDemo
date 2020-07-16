@@ -22,6 +22,7 @@ namespace BookStore.Data
         public int Quantity { get; set; }
         [Required]
         public double Price { get; set; }
+        public bool IsDeleted { get; set; }
         public List<BookOrders> BookOrders { get; set; }
 
     }
