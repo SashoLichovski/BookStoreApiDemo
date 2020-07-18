@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookStore.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace BookStore.DtoModels
         public double Price { get; set; }
         [Required]
         public string Genre { get; set; }
+
         public bool IsDeleted { get; set; }
     }
 }

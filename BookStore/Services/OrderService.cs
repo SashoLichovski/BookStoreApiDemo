@@ -95,5 +95,25 @@ namespace BookStore.Services
             }
             return isInStock;
         }
+
+        public List<OrderDto> GetAll()
+        {
+            var dbOrders = orderRepo.GetAll();
+            var dtoOrders = dbOrders.Select(x => x.ToOrderDto()).ToList();
+            return dtoOrders;
+
+        }
+
+        public bool UpdateStatus(int orderId, EnumStatus status)
+        {
+            var dbOrder = orderRepo.GetById(orderId);
+            if (dbOrder != null)
+            {
+                dbOrder.Status = status;
+                orderRepo.Update(dbOrder);
+                return true;
+            }
+            return false;
+        }
     }
 }

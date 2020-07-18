@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using BookStore.Data;
 using BookStore.DtoModels;
 using BookStore.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
@@ -19,6 +20,13 @@ namespace BookStore.Controllers
         public OrderController(IOrderService orderService)
         {
             this.orderService = orderService;
+        }
+
+        [HttpGet]
+        public ActionResult<List<OrderDto>> GetAll()
+        {
+            var orders = orderService.GetAll();
+            return Ok(orders);
         }
 
         /// <summary>
@@ -67,6 +75,20 @@ namespace BookStore.Controllers
             var order = orderService.GetOrder(email, trackingNumber);
             order.BookTitles = orderService.GetOrderBooks(order.Id);
             return Ok(order);
+        }
+
+        [HttpPut]
+        public IActionResult Update(UpdateOrderDto updateOrderDto)
+        {
+            var isValid = orderService.UpdateStatus(updateOrderDto.OrderId, updateOrderDto.Status);
+            if (isValid)
+            {
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
         }
     }
 }

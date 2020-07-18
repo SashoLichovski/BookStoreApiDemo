@@ -27,9 +27,25 @@ namespace BookStore.Repositories
             return context.Orders.FirstOrDefault(x => x.Email == email && x.TrackingNumber == trackingNumber);
         }
 
+        public List<Order> GetAll()
+        {
+            return context.Orders.ToList();
+        }
+
+        public Order GetById(int orderId)
+        {
+            return context.Orders.FirstOrDefault(x => x.Id == orderId);
+        }
+
         public List<BookOrders> GetOrderBooks(int orderId)
         {
             return context.BookOrders.Where(x => x.OrderId == orderId).ToList();
+        }
+
+        public void Update(Order dbOrder)
+        {
+            context.Orders.Update(dbOrder);
+            context.SaveChanges();
         }
     }
 }

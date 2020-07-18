@@ -49,8 +49,9 @@ namespace BookStore.Helpers
                 Phone = x.Phone,
                 Adress = x.Adress,
                 Email = x.Email,
-                FullPrice =  x.FullPrice,
-                TrackingNumber = x.TrackingNumber
+                FullPrice = x.FullPrice,
+                TrackingNumber = x.TrackingNumber,
+                Status = x.Status.ToString()
             };
         }
     }

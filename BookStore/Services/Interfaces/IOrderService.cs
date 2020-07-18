@@ -1,4 +1,5 @@
-﻿using BookStore.DtoModels;
+﻿using BookStore.Data;
+using BookStore.DtoModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace BookStore.Services.Interfaces
         /// <param name="trackingNumber"></param>
         /// <returns>Bool</returns>
         bool CheckOrder(string email, string trackingNumber);
+        List<OrderDto> GetAll();
         bool CheckBookQuantity(List<int> bookIds);
 
         /// <summary>
@@ -37,5 +39,6 @@ namespace BookStore.Services.Interfaces
         /// <param name="orderId"></param>
         /// <returns>List<string></returns>
         List<string> GetOrderBooks(int orderId);
+        bool UpdateStatus(int orderId, EnumStatus status);
     }
 }

@@ -22,6 +22,8 @@ namespace BookStore.Data
         [Required]
         public double FullPrice { get; set; }
 
+        public EnumStatus Status { get; set; }
+
         public List<BookOrders> BookOrders { get; set; }
     }
 }

@@ -53,6 +53,10 @@ function getOrder(){
             bookList.appendChild(newTitle);
         });
 
+        var status = document.createElement(`p`);
+        status.innerText = `Status: ${data.status}`;
+        container.appendChild(status);
+
         })
         .catch(function (error) {
             if (error.response.status == 404) {

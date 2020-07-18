@@ -11,5 +11,8 @@ namespace BookStore.Repositories.Interfaces
         void Add(Order order);
         Order FindOrder(string email, string trackingNumber);
         List<BookOrders> GetOrderBooks(int orderId);
+        List<Order> GetAll();
+        Order GetById(int orderId);
+        void Update(Order dbOrder);
     }
 }

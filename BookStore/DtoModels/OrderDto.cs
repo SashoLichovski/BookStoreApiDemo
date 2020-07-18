@@ -1,8 +1,6 @@
-﻿using System;
+﻿using BookStore.Data;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BookStore.DtoModels
 {
@@ -22,6 +20,7 @@ namespace BookStore.DtoModels
         public string TrackingNumber { get; set; }
         [Required]
         public double FullPrice { get; set; }
+        public string Status { get; set; }
         public List<string> BookTitles { get; set; }
     }
 }
