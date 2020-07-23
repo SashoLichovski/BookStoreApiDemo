@@ -9,9 +9,9 @@ namespace BookStore.Repositories
 {
     public class BookRepository : IBookRepository
     {
-        private readonly AppDbContext context;
+        private readonly ApplicationDbContext context;
 
-        public BookRepository(AppDbContext context)
+        public BookRepository(ApplicationDbContext context)
         {
             this.context = context;
         }

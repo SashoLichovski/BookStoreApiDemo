@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BookStore.Data
 {
-    public class AppDbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
         }
@@ -16,5 +16,6 @@ namespace BookStore.Data
         public DbSet<Book> Books { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<BookOrders> BookOrders { get; set; }
+        public DbSet<UserApplication> Applications { get; set; }
     }
 }

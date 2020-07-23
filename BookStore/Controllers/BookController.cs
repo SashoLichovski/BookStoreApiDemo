@@ -1,5 +1,6 @@
 ﻿using BookStore.DtoModels;
 using BookStore.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -66,6 +67,7 @@ namespace BookStore.Controllers
         /// </summary>
         /// <param name="dtoBook"></param>
         [HttpPost]
+        [Authorize]
         public IActionResult Create(BookDto dtoBook)
         {
             bookService.Create(dtoBook);
@@ -77,6 +79,7 @@ namespace BookStore.Controllers
         /// </summary>
         /// <param name="dtoBook"></param>
         [HttpPut]
+        [Authorize]
         public IActionResult Update(BookDto dtoBook)
         {
             bookService.Update(dtoBook);

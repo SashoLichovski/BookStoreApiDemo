@@ -9,9 +9,9 @@ namespace BookStore.Repositories
 {
     public class OrderRepository : IOrderRepository
     {
-        private readonly AppDbContext context;
+        private readonly ApplicationDbContext context;
 
-        public OrderRepository(AppDbContext context)
+        public OrderRepository(ApplicationDbContext context)
         {
             this.context = context;
         }
